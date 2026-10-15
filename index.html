@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Amando Tarigan | Portofolio & CV</title>
+  <meta name="description" content="Portofolio resmi Jose Amando Tarigan - Mahasiswa D3 Teknik Informatika Universitas Sumatera Utara, Media Kreatif, dan Penggiat Teknologi.">
+  <meta name="keywords" content="Jose Amando Tarigan, Portofolio, Teknik Informatika USU, Web Developer, Media Kreatif, GBKP KM.8">
+  <meta name="author" content="Jose Amando Tarigan">
+
+  <!-- Open Graph / Meta Sosial -->
+  <meta property="og:title" content="Jose Amando Tarigan | Portofolio">
+  <meta property="og:description" content="Media Kreatif & Mahasiswa D3 Teknik Informatika Universitas Sumatera Utara.">
+  <meta property="og:image" content="assets/images/profile.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas Bintang Interaktif untuk melengkapi background malam -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-badge">JT</span>
+        <span class="brand-text">Jose<span>.dev</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#education" class="nav-link">Pendidikan</a></li>
+        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+        <li><a href="#skills" class="nav-link">Keahlian</a></li>
+        <li><a href="#projects" class="nav-link">Karya</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+        <li class="nav-cta">
+          <a href="#contact" class="btn btn-sm btn-primary">
+            <i class="fa-regular fa-paper-plane"></i> Hubungi
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <div class="hero-text-col">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>Mahasiswa D3 Teknik Informatika • USU</span>
+          </div>
+
+          <h1 class="hero-title">
+            Halo, Saya <br>
+            <span class="gradient-text">Jose Amando Tarigan</span>
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">Fokus: </span>
+            <span id="typing-text" class="typing-text">Media Kreatif</span>
+            <span class="cursor">&nbsp;</span>
+          </div>
+
+          <p class="hero-description">
+            Memiliki rasa ingin tahu tinggi dan ketertarikan mendalam dalam mempelajari teknologi, perangkat lunak, pemrograman, basis data, dan media kreatif. Senang berkolaborasi serta aktif dalam pengembangan akademik maupun organisasi.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i> Hubungi Saya
+            </a>
+            <a href="https://github.com/Jose190109" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fa-brands fa-github"></i> GitHub: @Jose190109
+            </a>
+            <button onclick="window.print()" class="btn btn-glass" title="Cetak / Simpan CV Format PDF">
+              <i class="fa-solid fa-file-pdf"></i> Cetak CV
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div>
+                <h4>Universitas Sumatera Utara</h4>
+                <p>D3 Teknik Informatika</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Medan, Indonesia</h4>
+                <p>Jl. Parang Ras No.19</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fa-solid fa-users-gear"></i>
+              <div>
+                <h4>Kepemimpinan</h4>
+                <p>GBKP KM.8 Medan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-col">
+          <div class="profile-frame">
+            <div class="ambient-glow"></div>
+            <div class="avatar-ring">
+              <img src="assets/images/profile.jpg" alt="Foto Profil Jose Amando Tarigan" class="profile-img">
+            </div>
+            <div class="floating-badge badge-top">
+              <i class="fa-solid fa-code"></i>
+              <span>Tech Enthusiast</span>
+            </div>
+            <div class="floating-badge badge-bottom">
+              <i class="fa-solid fa-palette"></i>
+              <span>Media Kreatif</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-user"></i> Profil Diri</span>
+        <h2 class="section-title">Tentang <span class="gradient-text">Jose Amando</span></h2>
+        <p class="section-subtitle">Mengenal lebih dekat dedikasi, minat, serta kepribadian saya dalam dunia teknologi & organisasi.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass-card main-bio">
+          <div class="bio-header">
+            <div class="bio-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <h3>Profil Singkat</h3>
+          </div>
+          <p class="bio-text">
+            Saya adalah Mahasiswa <strong>D3 Teknik Informatika di Universitas Sumatera Utara (USU)</strong> yang memiliki rasa ingin tahu tinggi dan ketertarikan untuk terus mempelajari kemajuan teknologi, rekayasa perangkat lunak, perangkat keras, pemrograman komputer, serta pengelolaan basis data.
+          </p>
+          <p class="bio-text">
+            Memiliki kemampuan komunikasi dan kerja sama tim yang baik, mudah beradaptasi dalam lingkungan yang dinamis, serta senantiasa aktif mengembangkan potensi diri baik melalui kegiatan akademik perkuliahan maupun pengalaman kepemimpinan di organisasi.
+          </p>
+          
+          <div class="traits-grid">
+            <div class="trait-item">
+              <i class="fa-solid fa-brain"></i>
+              <div>
+                <strong>Rasa Ingin Tahu Tinggi</strong>
+                <span>Cepat memahami konsep & teknologi baru</span>
+              </div>
+            </div>
+            <div class="trait-item">
+              <i class="fa-solid fa-comments"></i>
+              <div>
+                <strong>Komunikasi & Kolaborasi</strong>
+                <span>Mampu bekerja sinergis dalam kelompok</span>
+              </div>
+            </div>
+            <div class="trait-item">
+              <i class="fa-solid fa-shuffle"></i>
+              <div>
+                <strong>Adaptif & Fleksibel</strong>
+                <span>Mudah menyesuaikan diri dalam berbagai situasi</span>
+              </div>
+            </div>
+            <div class="trait-item">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div>
+                <strong>Kreatif & Inovatif</strong>
+                <span>Menghasilkan ide visual dan media komunikatif</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="glass-card info-card">
+            <h3 class="card-heading"><i class="fa-solid fa-address-card"></i> Informasi Kontak</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-label"><i class="fa-solid fa-envelope"></i> Email</span>
+                <a href="mailto:josetarigan29@gmail.com" class="info-val">josetarigan29@gmail.com</a>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-phone"></i> Telepon / WA</span>
+                <a href="https://wa.me/6282184095954" target="_blank" class="info-val">+62 821-8409-5954</a>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-brands fa-instagram"></i> Instagram</span>
+                <a href="https://instagram.com/josetrg_19" target="_blank" class="info-val">@josetrg_19</a>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-brands fa-github"></i> GitHub</span>
+                <a href="https://github.com/Jose190109" target="_blank" class="info-val">Jose190109</a>
+              </li>
+              <li>
+                <span class="info-label"><i class="fa-solid fa-map-pin"></i> Alamat</span>
+                <span class="info-val">Jl. Parang Ras No.19, Medan</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glass-card language-card">
+            <h3 class="card-heading"><i class="fa-solid fa-language"></i> Kemampuan Bahasa</h3>
+            <div class="lang-item">
+              <div class="lang-info">
+                <span>Bahasa Indonesia</span>
+                <span class="lang-badge badge-active">Fasih (Native)</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+              </div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-info">
+                <span>Bahasa Inggris</span>
+                <span class="lang-badge badge-learning">Pasif (Dasar & Teknis)</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 60%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Riwayat Studi</span>
+        <h2 class="section-title">Latar Belakang <span class="gradient-text">Pendidikan</span></h2>
+        <p class="section-subtitle">Jejak pendidikan formal yang membentuk kompetensi logika dan teknologi saya.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-university"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <span class="timeline-period">2026 (Sedang Menempuh)</span>
+              <span class="tag-badge">Pendidikan Tinggi</span>
+            </div>
+            <h3 class="timeline-title">D3 Teknik Informatika</h3>
+            <h4 class="timeline-place">Universitas Sumatera Utara (USU), Medan</h4>
+            <p class="timeline-desc">
+              Fokus mendalami dasar ilmu komputer, pemrograman (Python, C, HTML), arsitektur komputer, algoritma dasar, sistem basis data, serta kesiapan implementasi perangkat lunak dan perangkat keras dalam dunia industri nyata.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <span class="timeline-period">2023 – 2026</span>
+              <span class="tag-badge">Sekolah Menengah Atas</span>
+            </div>
+            <h3 class="timeline-title">Pendidikan Menengah Atas</h3>
+            <h4 class="timeline-place">SMA S Katolik Budi Murni 2 Medan</h4>
+            <p class="timeline-desc">
+              Menyelesaikan pendidikan tingkat menengah dengan penguatan kemampuan akademis, logika berpikir kritis, keterlibatan aktif dalam kepanitiaan, serta penanaman karakter kepemimpinan dan disiplin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organization Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-users"></i> Pengalaman Nyata</span>
+        <h2 class="section-title">Pengalaman <span class="gradient-text">Organisasi</span></h2>
+        <p class="section-subtitle">Peran kepemimpinan dan dedikasi pelayanan di Immanuel GBKP KM.8 Medan.</p>
+      </div>
+
+      <div class="experience-grid">
+        <!-- Periode 1: 2024 - 2025 -->
+        <div class="exp-card glass-card highlight-card">
+          <div class="exp-badge-row">
+            <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2024 – 2025</span>
+            <span class="exp-status">Kepemimpinan Tertinggi</span>
+          </div>
+          <h3 class="exp-role">Ketua Pembinaan Remaja</h3>
+          <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
+          <ul class="exp-tasks">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Manajemen Data Anggota:</strong> Mendata anggota remaja dengan sistematis, rapi, dan terstruktur guna akurasi pelaporan organisasi.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Pembentukan Karakter:</strong> Menginisiasi sesi bimbingan dan kegiatan positif untuk membangun moral serta karakter remaja yang tangguh.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Koordinasi Mingguan:</strong> Mengatur, mengawasi, dan memimpin jalannya seluruh kegiatan mingguan agar terlaksana dengan sukses dan berkualitas.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Periode 2: 2023 - 2024 -->
+        <div class="exp-card glass-card">
+          <div class="exp-badge-row">
+            <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2023 – 2024</span>
+            <span class="exp-status">Manajemen Sektor</span>
+          </div>
+          <h3 class="exp-role">Ketua Sektor Remaja</h3>
+          <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
+          <ul class="exp-tasks">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Optimalisasi Kinerja Tim:</strong> Membangun kebersamaan, motivasi, serta kinerja para pengurus remaja sektor agar bekerja secara efektif.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Eksekusi Program Kerja:</strong> Menjalankan dan merealisasikan program-program yang telah disusun bersama dengan penuh tanggung jawab.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Periode 3: 2022 - 2023 -->
+        <div class="exp-card glass-card">
+          <div class="exp-badge-row">
+            <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2022 – 2023</span>
+            <span class="exp-status">Administrasi & Kesekretariatan</span>
+          </div>
+          <h3 class="exp-role">Sekretaris Pembinaan Remaja</h3>
+          <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
+          <ul class="exp-tasks">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Tata Kelola Arsip & Data:</strong> Mengelola data registrasi kehadiran anggota remaja secara tertata dan akuntabel.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Dukungan Pembinaan:</strong> Membantu perancangan modul kegiatan pembinaan karakter bagi remaja.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span><strong>Notulensi & Penjadwalan:</strong> Mengatur jadwal kegiatan rutin mingguan dan menyusun dokumentasi acara.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-sliders"></i> Kompetensi</span>
+        <h2 class="section-title">Keahlian & <span class="gradient-text">Tools</span></h2>
+        <p class="section-subtitle">Kombinasi kemampuan teknis, perangkat produktivitas, serta karakter interpersonal.</p>
+      </div>
+
+      <!-- Skills Category Tabs -->
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="hard">Hard Skills</button>
+        <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        <button class="filter-btn" data-filter="tools">Software & Tools</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Python -->
+        <div class="skill-card glass-card" data-category="hard">
+          <div class="skill-icon python-icon">
+            <i class="fa-brands fa-python"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Python Language</h4>
+              <span class="level-pill">Dasar</span>
+            </div>
+            <p>Sintaks, struktur kontrol, operasi string, logika matematika, dan kalkulator diskon.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C Language -->
+        <div class="skill-card glass-card" data-category="hard">
+          <div class="skill-icon c-icon">
+            <i class="fa-solid fa-c"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>C Language</h4>
+              <span class="level-pill">Dasar</span>
+            </div>
+            <p>Pemrograman prosedural, logika algoritma, input/output, dan tipe data dasar.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HTML Language -->
+        <div class="skill-card glass-card" data-category="hard">
+          <div class="skill-icon html-icon">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>HTML Language</h4>
+              <span class="level-pill">Dasar</span>
+            </div>
+            <p>Struktur semantik web, elemen formulir, tabel, dan penyusunan halaman web portofolio.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canva -->
+        <div class="skill-card glass-card" data-category="tools">
+          <div class="skill-icon canva-icon">
+            <i class="fa-solid fa-paintbrush"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Canva</h4>
+              <span class="level-pill">Media Kreatif</span>
+            </div>
+            <p>Desain visual, poster kegiatan organisasi, konten sosial media, dan layout presentasi.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Excel -->
+        <div class="skill-card glass-card" data-category="tools">
+          <div class="skill-icon excel-icon">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Microsoft Excel</h4>
+              <span class="level-pill">Pengolahan Data</span>
+            </div>
+            <p>Tabel rekapitulasi data anggota, formula dasar, pengurutan, dan administrasi laporan.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Word -->
+        <div class="skill-card glass-card" data-category="tools">
+          <div class="skill-icon word-icon">
+            <i class="fa-solid fa-file-word"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Microsoft Word</h4>
+              <span class="level-pill">Dokumentasi</span>
+            </div>
+            <p>Penyusunan surat resmi organisasi, proposal kegiatan mingguan, dan laporan kegiatan.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VS Code & Code::Blocks -->
+        <div class="skill-card glass-card" data-category="tools">
+          <div class="skill-icon ide-icon">
+            <i class="fa-solid fa-terminal"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>VS Code & Code::Blocks</h4>
+              <span class="level-pill">IDE & Editor</span>
+            </div>
+            <p>Code editing, debugging program C & Python, manajemen file proyek & ekstensi modern.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skill: Komunikasi -->
+        <div class="skill-card glass-card" data-category="soft">
+          <div class="skill-icon comm-icon">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Komunikasi Efektif</h4>
+              <span class="level-pill">Soft Skill</span>
+            </div>
+            <p>Penyampaian gagasan terstruktur, memimpin rapat mingguan, dan presentasi tim.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skill: Adaptasi -->
+        <div class="skill-card glass-card" data-category="soft">
+          <div class="skill-icon adapt-icon">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Kemampuan Beradaptasi</h4>
+              <span class="level-pill">Soft Skill</span>
+            </div>
+            <p>Cepat menyatu dengan lingkungan baru, sigap menghadapi dinamika tugas dan organisasi.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 92%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Soft Skill: Kemauan Belajar -->
+        <div class="skill-card glass-card" data-category="soft">
+          <div class="skill-icon learn-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="skill-info">
+            <div class="skill-title-row">
+              <h4>Semangat Belajar Tinggi</h4>
+              <span class="level-pill">Soft Skill</span>
+            </div>
+            <p>Memiliki determinasi tinggi untuk mengeksplorasi ilmu baru di bidang IT dan pemrograman.</p>
+            <div class="skill-meter">
+              <div class="skill-meter-fill" style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects / Showcase Section -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Proyek & Eksplorasi</span>
+        <h2 class="section-title">Karya & <span class="gradient-text">Aktivitas</span></h2>
+        <p class="section-subtitle">Beberapa eksplorasi kode Python dan karya media kreatif yang sedang saya kembangkan.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-card">
+          <div class="project-preview project-bg-1">
+            <i class="fa-solid fa-cash-register preview-icon"></i>
+            <span class="project-tag">Python Program</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Sistem Kasir & Kalkulator Diskon</h3>
+            <p class="project-desc">
+              Program Python terminal interaktif untuk menghitung diskon belanja toko bertingkat otomatis berdasarkan total pembelanjaan pelanggan.
+            </p>
+            <div class="tech-stack">
+              <span>Python 3</span>
+              <span>Conditional Logic</span>
+              <span>Math Operations</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Jose190109" target="_blank" class="btn btn-sm btn-glass">
+                <i class="fa-brands fa-github"></i> Lihat di GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-card">
+          <div class="project-preview project-bg-2">
+            <i class="fa-solid fa-font preview-icon"></i>
+            <span class="project-tag">Python Program</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">String & Numerical Converter Tool</h3>
+            <p class="project-desc">
+              Script penganalisis teks yang mampu menghitung panjang string, jumlah karakter spesifik, slice indeks kata, hingga konversi nilai ASCII, Biner, dan Hexadesimal.
+            </p>
+            <div class="tech-stack">
+              <span>Python 3</span>
+              <span>String Formatting</span>
+              <span>Number Base (Bin/Hex)</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Jose190109" target="_blank" class="btn btn-sm btn-glass">
+                <i class="fa-brands fa-github"></i> Lihat di GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-card">
+          <div class="project-preview project-bg-3">
+            <i class="fa-solid fa-paint-brush preview-icon"></i>
+            <span class="project-tag">Media Kreatif</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Desain Publikasi & Konten Acara</h3>
+            <p class="project-desc">
+              Pembuatan aset visual, poster acara mingguan pembinaan remaja, dan slide presentasi yang komunikatif menggunakan Canva.
+            </p>
+            <div class="tech-stack">
+              <span>Canva</span>
+              <span>Visual Branding</span>
+              <span>Social Media</span>
+            </div>
+            <div class="project-links">
+              <a href="https://instagram.com/josetrg_19" target="_blank" class="btn btn-sm btn-glass">
+                <i class="fa-brands fa-instagram"></i> Dokumentasi Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Hubungi Saya</span>
+        <h2 class="section-title">Mari Terhubung & <span class="gradient-text">Berkolaborasi</span></h2>
+        <p class="section-subtitle">Saya terbuka untuk diskusi akademik, proyek kolaborasi teknologi, maupun kepanitiaan organisasi.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Cards -->
+        <div class="contact-info-col">
+          <!-- Email Card -->
+          <div class="contact-item-card glass-card">
+            <div class="contact-icon email-theme">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email Utama</h4>
+              <p id="email-text">josetarigan29@gmail.com</p>
+            </div>
+            <div class="contact-actions">
+              <a href="mailto:josetarigan29@gmail.com" class="action-btn" title="Kirim Email Langsung">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="action-btn copy-btn" data-copy="josetarigan29@gmail.com" title="Salin Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- WhatsApp Card -->
+          <div class="contact-item-card glass-card">
+            <div class="contact-icon wa-theme">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <h4>WhatsApp / Seluler</h4>
+              <p>+62 821-8409-5954</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://wa.me/6282184095954" target="_blank" class="action-btn" title="Buka WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <button class="action-btn copy-btn" data-copy="+6282184095954" title="Salin Nomor Telepon">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="contact-item-card glass-card">
+            <div class="contact-icon ig-theme">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Instagram</h4>
+              <p>@josetrg_19</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://instagram.com/josetrg_19" target="_blank" class="action-btn" title="Kunjungi Profil Instagram">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="contact-item-card glass-card">
+            <div class="contact-icon github-theme">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="contact-details">
+              <h4>GitHub Profile</h4>
+              <p>github.com/Jose190109</p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://github.com/Jose190109" target="_blank" class="action-btn" title="Kunjungi Profil GitHub">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Address Card -->
+          <div class="contact-item-card glass-card">
+            <div class="contact-icon map-theme">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Lokasi Domisili</h4>
+              <p>Jl. Parang Ras No.19, Medan, Sumatera Utara</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Message Form -->
+        <div class="contact-form-col">
+          <div class="glass-card form-card">
+            <h3 class="form-title"><i class="fa-regular fa-paper-plane"></i> Kirim Pesan Cepat</h3>
+            <p class="form-subtitle">Tuliskan pesan Anda, dan pilih untuk mengirim via WhatsApp atau Email secara instan.</p>
+
+            <form id="quickMessageForm">
+              <div class="form-group">
+                <label for="senderName">Nama Anda</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="senderName" placeholder="Contoh: Rian Pratama" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="messageSubject">Subjek / Topik</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-tag input-icon"></i>
+                  <input type="text" id="messageSubject" placeholder="Contoh: Tawaran Kolaborasi Proyek Web" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage">Isi Pesan</label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fa-solid fa-comment-dots input-icon"></i>
+                  <textarea id="senderMessage" rows="4" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+                </div>
+              </div>
+
+              <div class="form-btn-group">
+                <button type="button" id="btnSendWA" class="btn btn-wa">
+                  <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp
+                </button>
+                <button type="button" id="btnSendEmail" class="btn btn-primary">
+                  <i class="fa-solid fa-envelope"></i> Kirim via Email
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#home" class="nav-brand">
+          <span class="brand-badge">JT</span>
+          <span class="brand-text">Jose Amando Tarigan</span>
+        </a>
+        <p>Mahasiswa D3 Teknik Informatika Universitas Sumatera Utara & Pegiat Media Kreatif.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/Jose190109" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://instagram.com/josetrg_19" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:josetarigan29@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/6282184095954" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container bottom-content">
+        <p>© 2026 Jose Amando Tarigan. Dibuat dengan dedikasi & dirancang untuk GitHub Pages.</p>
+        <a href="#home" class="scroll-top-btn" id="scrollTopBtn" title="Kembali ke atas">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast">Teks berhasil disalin!</div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
