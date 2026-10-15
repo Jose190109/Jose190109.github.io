@@ -12,3 +12,4 @@ echo.
 echo Server aktif! Tekan Ctrl+C di terminal ini jika ingin menutup server.
 echo.
 python -m http.server 8000
+
