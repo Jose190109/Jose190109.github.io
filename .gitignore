@@ -1,0 +1,28 @@
+# ==========================================
+# Git Ignore - Portofolio Jose Amando Tarigan
+# ==========================================
+
+# Folder Backup & Restore Data Lokal
+_backups/
+backups/
+_restored_files/
+*.bundle
+*.zip
+*.tar.gz
+
+# File Sistem Operasi & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Log & File Sementara
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.temp/
+.tmp/

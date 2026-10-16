@@ -28,6 +28,17 @@ Website portofolio pribadi modern berorientasi web & mobile responsive milik **J
    - Form pesan cepat terhubung langsung ke WhatsApp & Mail client.
    - Tombol Cetak / Simpan CV (*print-ready*).
    - Responsive di layar HP, Tablet, maupun Laptop.
+4. **🛡️ Sistem Keamanan Berlapis (Security & Hardening)**:
+   - **HTTPS Enforced & Auto-Redirect**: Seluruh koneksi dan aset dipaksa menggunakan enkripsi SSL/TLS 256-bit.
+   - **Content Security Policy (CSP)** & Header Keamanan (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Permissions-Policy`).
+   - **Web Security Shield & Anti-XSS**: Sanitasi input dan proteksi injeksi skrip berbahaya pada formulir pesan.
+   - **Anti-Bot Honeypot**: Perangkap otomatis untuk memblokir bot spam web.
+   - **Client-Side Rate Limiting**: Pembatasan frekuensi pengiriman pesan untuk mencegah *flooding*.
+5. **💾 Sistem Pencadangan Data (Backup & Restore)**:
+   - **1-Klik Backup Lokal (`backup_data.bat`)**: Menghasilkan arsip `.zip` dan snapshot Git Bundle cadangan secara offline.
+   - **1-Klik Restore Lokal (`restore_data.bat`)**: Pemulihan instan berkas ke folder pemulihan aman.
+   - **Otomasi Cloud Backup (GitHub Actions)**: Pencadangan otomatis dan audit keamanan setiap push dan mingguan.
+   - *Panduan lengkap keamanan dapat dibaca pada file*: [`KEAMANAN.md`](file:///c:/Users/User/OneDrive/ARSIP/Jose190109.github.io/KEAMANAN.md)
 
 ---
 

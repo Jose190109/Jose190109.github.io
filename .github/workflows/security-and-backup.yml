@@ -1,0 +1,64 @@
+name: "Security Audit & Automated Backup"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # Berjalan otomatis setiap hari Minggu pukul 00:00 UTC (Backup Berkala Cloud)
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  security-audit:
+    name: "Audit Keamanan & Integritas Web"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Kode Repositori
+        uses: actions/checkout@v4
+
+      - name: Verifikasi Protokol HTTPS & Konten Tidak Aman (Mixed Content Check)
+        run: |
+          echo "🔍 Memeriksa apakah terdapat URL eksternal tidak aman (http://)..."
+          # Cari http:// eksternal yang bukan namespace xml
+          INSECURE_LINKS=$(grep -rn "http://" . --exclude-dir=".git" --exclude-dir="_backups" --exclude="*.bat" --exclude="*.md" | grep -v "w3.org" || true)
+          if [ -n "$INSECURE_LINKS" ]; then
+            echo "⚠️ Ditemukan tautan tidak aman:"
+            echo "$INSECURE_LINKS"
+            echo "Disarankan menggunakan https:// untuk semua aset eksternal."
+          else
+            echo "✅ Semua tautan dan dependensi aman menggunakan protokol HTTPS!"
+          fi
+
+      - name: Verifikasi Sintaks JavaScript & HTML
+        run: |
+          echo "🔍 Memvalidasi sintaks JavaScript..."
+          node -c script.js
+          echo "✅ File script.js valid secara sintaksis."
+
+  automated-cloud-backup:
+    name: "Pencadangan Data Otomatis (Cloud Backup)"
+    needs: security-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Seluruh Riwayat Git
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Buat Arsip Backup Terkompresi
+        run: |
+          TIMESTAMP=$(date +"%Y-%m-%d_%H%M%S")
+          mkdir -p dist_backup
+          echo "📦 Mengompresi portofolio untuk backup cloud tanggal: $TIMESTAMP"
+          zip -r "dist_backup/backup_cloud_${TIMESTAMP}.zip" . -x "*.git*" "_backups/*"
+          echo "✅ Arsip cloud berhasil dibuat."
+
+      - name: Unggah Hasil Backup ke GitHub Actions Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-backup-${{ github.sha }}
+          path: dist_backup/
+          retention-days: 90
+

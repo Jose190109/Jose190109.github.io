@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Inisialisasi Sistem Keamanan (HTTPS Enforcer & Anti-Clickjacking)
+  initSecurityShield();
+
   // 1. Inisialisasi Efek Canvas Bintang Malam (Starfield)
   initStarfield();
 
@@ -235,11 +238,101 @@ function initSkillsFilter() {
 }
 
 /* ==========================================================
+   0. WEB SECURITY SHIELD (HTTPS, XSS Sanitizer, Bot & Rate Limit)
+   ========================================================== */
+const SecurityShield = {
+  // 1. Enforce HTTPS (Paksa sambungan aman pada lingkungan online)
+  enforceHTTPS: function() {
+    const isLocalhost = ['localhost', '127.0.0.1', '::1', ''].includes(window.location.hostname);
+    if (window.location.protocol === 'http:' && !isLocalhost) {
+      console.warn('[Security Shield] Mengalihkan otomatis ke sambungan aman HTTPS...');
+      window.location.replace(window.location.href.replace('http:', 'https:'));
+    }
+  },
+
+  // 2. Anti-Clickjacking / Frame Buster
+  preventFraming: function() {
+    try {
+      if (window.top !== window.self) {
+        window.top.location = window.self.location;
+      }
+    } catch (e) {
+      console.warn('[Security Shield] Frame restriction aktif:', e);
+    }
+  },
+
+  // 3. Sanitasi Input dari Tag & Skrip Berbahaya
+  sanitize: function(str) {
+    if (typeof str !== 'string') return '';
+    return str
+      .replace(/<[^>]*>/g, '') // Hapus tag HTML
+      .replace(/javascript:/gi, '') // Hapus URI skrip
+      .replace(/on\w+\s*=/gi, '') // Hapus atribut handler inline
+      .trim();
+  },
+
+  // 4. Deteksi Pola Ancaman (XSS / SQLi / Malicious Injection)
+  detectThreat: function(str) {
+    if (!str) return false;
+    const dangerousPatterns = [
+      /<script[\s\S]*?>[\s\S]*?<\/script>/gi,
+      /javascript:/gi,
+      /<iframe[\s\S]*?>/gi,
+      /onerror\s*=/gi,
+      /onload\s*=/gi,
+      /eval\s*\(/gi,
+      /UNION\s+SELECT/gi,
+      /DROP\s+TABLE/gi
+    ];
+    return dangerousPatterns.some(pattern => pattern.test(str));
+  },
+
+  // 5. Client-Side Rate Limiter (Anti-Flooding / Anti-Spam)
+  submissions: [],
+  maxSubmissions: 3,
+  timeWindowMs: 60000, // 60 detik
+
+  checkRateLimit: function() {
+    const now = Date.now();
+    this.submissions = this.submissions.filter(t => now - t < this.timeWindowMs);
+    if (this.submissions.length >= this.maxSubmissions) {
+      const waitSeconds = Math.ceil((this.timeWindowMs - (now - this.submissions[0])) / 1000);
+      return { allowed: false, waitSeconds: waitSeconds > 0 ? waitSeconds : 10 };
+    }
+    this.submissions.push(now);
+    return { allowed: true };
+  },
+
+  // 6. Bot Honeypot Verifier
+  isBotDetected: function() {
+    const hp = document.getElementById('sec_hp_field');
+    return hp && hp.value.trim().length > 0;
+  }
+};
+
+function initSecurityShield() {
+  SecurityShield.enforceHTTPS();
+  SecurityShield.preventFraming();
+}
+
+/* ==========================================================
+   GLOBAL TOAST NOTIFICATION
+   ========================================================== */
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
+/* ==========================================================
    5. COPY TO CLIPBOARD & TOAST
    ========================================================== */
 function initCopyButtons() {
   const copyButtons = document.querySelectorAll('.copy-btn');
-  const toast = document.getElementById('toast');
 
   copyButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -253,19 +346,10 @@ function initCopyButtons() {
       }
     });
   });
-
-  function showToast(message) {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 2800);
-  }
 }
 
 /* ==========================================================
-   6. QUICK CONTACT FORM (WhatsApp & Email Direct Integration)
+   6. QUICK CONTACT FORM (Berlapis Keamanan Anti-Spam & Sanitasi)
    ========================================================== */
 function initContactForm() {
   const btnWA = document.getElementById('btnSendWA');
@@ -275,14 +359,43 @@ function initContactForm() {
   const inputMsg = document.getElementById('senderMessage');
 
   function validateInputs() {
-    const name = inputName.value.trim();
-    const subject = inputSubject.value.trim();
-    const message = inputMsg.value.trim();
-
-    if (!name || !subject || !message) {
-      alert('Harap isi Nama, Subjek, dan Pesan sebelum mengirim.');
+    // A. Periksa Honeypot (Perangkap Bot)
+    if (SecurityShield.isBotDetected()) {
+      console.warn('[Security Shield] Form submission dibatalkan: Bot terdeteksi.');
+      showToast('Pengiriman ditolak oleh sistem keamanan.');
       return null;
     }
+
+    // B. Periksa Batas Pengiriman (Rate Limiting)
+    const rateCheck = SecurityShield.checkRateLimit();
+    if (!rateCheck.allowed) {
+      showToast(`Mohon tunggu ${rateCheck.waitSeconds} detik sebelum mengirim lagi.`);
+      return null;
+    }
+
+    const rawName = inputName ? inputName.value.trim() : '';
+    const rawSubject = inputSubject ? inputSubject.value.trim() : '';
+    const rawMessage = inputMsg ? inputMsg.value.trim() : '';
+
+    if (!rawName || !rawSubject || !rawMessage) {
+      showToast('Harap lengkapi Nama, Subjek, dan Pesan.');
+      return null;
+    }
+
+    // C. Deteksi Payload Berbahaya / XSS Injection
+    if (SecurityShield.detectThreat(rawName) || 
+        SecurityShield.detectThreat(rawSubject) || 
+        SecurityShield.detectThreat(rawMessage)) {
+      showToast('Peringatan: Karakter berbahaya / skrip dicegat oleh Security Shield!');
+      console.warn('[Security Shield] Pola berbahaya terdeteksi dalam input form.');
+      return null;
+    }
+
+    // D. Sanitasi Karakter
+    const name = SecurityShield.sanitize(rawName);
+    const subject = SecurityShield.sanitize(rawSubject);
+    const message = SecurityShield.sanitize(rawMessage);
+
     return { name, subject, message };
   }
 
@@ -296,6 +409,7 @@ function initContactForm() {
       const waText = `Halo Jose Amando,\n\nSaya: ${data.name}\nSubjek: ${data.subject}\n\nPesan:\n${data.message}`;
       const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waText)}`;
       window.open(waUrl, '_blank');
+      showToast('Membuka WhatsApp terenkripsi...');
     });
   }
 
@@ -308,6 +422,7 @@ function initContactForm() {
       const emailTo = 'josetarigan29@gmail.com';
       const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(data.subject + ' - dari ' + data.name)}&body=${encodeURIComponent(data.message + '\n\nSalam,\n' + data.name)}`;
       window.location.href = mailtoUrl;
+      showToast('Membuka klien email...');
     });
   }
 }

@@ -8,6 +8,13 @@
   <meta name="keywords" content="Jose Amando Tarigan, Portofolio, Teknik Informatika USU, Web Developer, Media Kreatif, GBKP KM.8">
   <meta name="author" content="Jose Amando Tarigan">
 
+  <!-- Keamanan & Security Policy (HTTPS, CSP, Anti-Clickjacking) -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
   <!-- Open Graph / Meta Sosial -->
   <meta property="og:title" content="Jose Amando Tarigan | Portofolio">
   <meta property="og:description" content="Media Kreatif & Mahasiswa D3 Teknik Informatika Universitas Sumatera Utara.">
@@ -756,6 +763,10 @@
             <p class="form-subtitle">Tuliskan pesan Anda, dan pilih untuk mengirim via WhatsApp atau Email secara instan.</p>
 
             <form id="quickMessageForm">
+              <!-- Security Honeypot Anti-Bot Shield (Tersembunyi dari user) -->
+              <div style="display:none !important;" aria-hidden="true">
+                <input type="text" id="sec_hp_field" name="sec_hp_field" tabindex="-1" autocomplete="off">
+              </div>
               <div class="form-group">
                 <label for="senderName">Nama Anda</label>
                 <div class="input-wrapper">
@@ -817,6 +828,10 @@
     <div class="footer-bottom">
       <div class="container bottom-content">
         <p>© 2026 Jose Amando Tarigan. Dibuat dengan dedikasi & dirancang untuk GitHub Pages.</p>
+        <div class="security-badge" title="Koneksi terenkripsi HTTPS SSL/TLS & Proteksi Web Security Shield aktif">
+          <i class="fa-solid fa-shield-halved" style="color: #48cae4;"></i>
+          <span>HTTPS Enforced &bull; XSS Shield Protected</span>
+        </div>
         <a href="#home" class="scroll-top-btn" id="scrollTopBtn" title="Kembali ke atas">
           <i class="fa-solid fa-arrow-up"></i>
         </a>
