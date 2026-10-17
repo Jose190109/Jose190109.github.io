@@ -1192,6 +1192,278 @@ p {
 }
 
 /* ==========================================================
+   DOCUMENTATION & ACTIVITY GALLERY SECTION
+   ========================================================== */
+.doc-cloud-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.8rem;
+  background: linear-gradient(135deg, rgba(76, 201, 240, 0.08) 0%, rgba(114, 239, 221, 0.04) 100%), rgba(13, 21, 44, 0.6);
+  border: 1px solid rgba(76, 201, 240, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-cloud-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(76, 201, 240, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cloud-banner-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: rgba(76, 201, 240, 0.15);
+  border: 1px solid rgba(76, 201, 240, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.cloud-banner-content {
+  flex: 1;
+}
+
+.cloud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--secondary);
+  background: rgba(114, 239, 221, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.cloud-banner-content h3 {
+  font-size: 1.35rem;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.cloud-banner-content p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cloud-banner-action {
+  flex-shrink: 0;
+}
+
+.btn-glow {
+  box-shadow: 0 0 20px rgba(76, 201, 240, 0.35);
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(76, 201, 240, 0.55);
+}
+
+/* Documentation Grid */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.doc-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doc-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(76, 201, 240, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(76, 201, 240, 0.2);
+}
+
+.doc-media {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(13, 21, 44, 0.8);
+}
+
+.doc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.doc-card:hover .doc-img {
+  transform: scale(1.05);
+}
+
+.doc-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(30, 48, 86, 0.5) 0%, rgba(13, 21, 44, 0.95) 100%);
+}
+
+.fallback-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.futsal-fallback .fallback-icon-wrap {
+  background: rgba(114, 239, 221, 0.15);
+  color: var(--secondary);
+  border: 1px solid rgba(114, 239, 221, 0.35);
+}
+
+.org-fallback .fallback-icon-wrap {
+  background: rgba(76, 201, 240, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(76, 201, 240, 0.35);
+}
+
+.code-fallback .fallback-icon-wrap {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.doc-fallback h4 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.doc-fallback p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0.8rem;
+}
+
+.doc-fallback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  transition: all 0.25s ease;
+}
+
+.doc-fallback-btn:hover {
+  background: rgba(76, 201, 240, 0.2);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.doc-pill {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background: rgba(6, 10, 23, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--secondary);
+  border: 1px solid rgba(114, 239, 221, 0.25);
+  z-index: 2;
+}
+
+.doc-info {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.doc-meta {
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 0.6rem;
+}
+
+.doc-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.doc-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.doc-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+
+.doc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.doc-tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(76, 201, 240, 0.08);
+  border: 1px solid rgba(76, 201, 240, 0.18);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  color: var(--secondary);
+}
+
+.doc-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ==========================================================
    CONTACT SECTION
    ========================================================== */
 .contact-grid {
@@ -1520,8 +1792,23 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .experience-grid, .projects-grid {
+  .experience-grid, .projects-grid, .doc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .doc-cloud-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.8rem;
+  }
+
+  .cloud-banner-action {
+    width: 100%;
+  }
+
+  .cloud-banner-action .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .contact-grid {
