@@ -36,9 +36,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Canvas Bintang Interaktif untuk melengkapi background malam -->
-  <canvas id="starfield"></canvas>
-
   <!-- Navigation Bar -->
   <header class="navbar-wrapper">
     <nav class="navbar container">
@@ -76,7 +73,7 @@
       <div class="hero-grid">
         <div class="hero-text-col">
           <div class="status-pill">
-            <span class="pulse-dot"></span>
+            <i class="fa-solid fa-graduation-cap"></i>
             <span>Mahasiswa D3 Teknik Informatika • USU</span>
           </div>
 
@@ -92,7 +89,7 @@
           </div>
 
           <p class="hero-description">
-            Memiliki rasa ingin tahu tinggi dan ketertarikan mendalam dalam mempelajari teknologi, perangkat lunak, pemrograman, basis data, dan media kreatif. Senang berkolaborasi serta aktif dalam pengembangan akademik maupun organisasi.
+            Mahasiswa D3 Teknik Informatika di Universitas Sumatera Utara dengan antusiasme pada rekayasa perangkat lunak, pemrograman, media kreatif, dan basis data. Senang berkolaborasi serta aktif dalam pengembangan akademik maupun organisasi kemasyarakatan.
           </p>
 
           <div class="hero-actions">
@@ -133,18 +130,13 @@
         </div>
 
         <div class="hero-image-col">
-          <div class="profile-frame">
-            <div class="ambient-glow"></div>
-            <div class="avatar-ring">
+          <div class="profile-card glass-card">
+            <div class="profile-img-wrap">
               <img src="assets/images/profile.jpg" alt="Foto Profil Jose Amando Tarigan" class="profile-img">
             </div>
-            <div class="floating-badge badge-top">
-              <i class="fa-solid fa-code"></i>
-              <span>Tech Enthusiast</span>
-            </div>
-            <div class="floating-badge badge-bottom">
-              <i class="fa-solid fa-palette"></i>
-              <span>Media Kreatif</span>
+            <div class="profile-meta">
+              <h3 class="profile-name">Jose Amando Tarigan</h3>
+              <span class="profile-role"><i class="fa-solid fa-laptop-code"></i> D3 Teknik Informatika • USU</span>
             </div>
           </div>
         </div>
@@ -320,7 +312,7 @@
         <div class="exp-card glass-card highlight-card">
           <div class="exp-badge-row">
             <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2024 – 2025</span>
-            <span class="exp-status">Kepemimpinan Tertinggi</span>
+            <span class="exp-status">Ketua Pembinaan</span>
           </div>
           <h3 class="exp-role">Ketua Pembinaan Remaja</h3>
           <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
@@ -344,7 +336,7 @@
         <div class="exp-card glass-card">
           <div class="exp-badge-row">
             <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2023 – 2024</span>
-            <span class="exp-status">Manajemen Sektor</span>
+            <span class="exp-status">Ketua Sektor</span>
           </div>
           <h3 class="exp-role">Ketua Sektor Remaja</h3>
           <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
@@ -364,7 +356,7 @@
         <div class="exp-card glass-card">
           <div class="exp-badge-row">
             <span class="exp-year"><i class="fa-regular fa-calendar"></i> 2022 – 2023</span>
-            <span class="exp-status">Administrasi & Kesekretariatan</span>
+            <span class="exp-status">Sekretaris Organisasi</span>
           </div>
           <h3 class="exp-role">Sekretaris Pembinaan Remaja</h3>
           <h4 class="exp-org"><i class="fa-solid fa-church"></i> Immanuel GBKP KM.8 MEDAN</h4>
@@ -417,8 +409,10 @@
               <span class="level-pill">Dasar</span>
             </div>
             <p>Sintaks, struktur kontrol, operasi string, logika matematika, dan kalkulator diskon.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 75%;"></div>
+            <div class="skill-tags">
+              <span>Logika Kondisional</span>
+              <span>Operasi String</span>
+              <span>Kalkulator Terminal</span>
             </div>
           </div>
         </div>
@@ -434,8 +428,10 @@
               <span class="level-pill">Dasar</span>
             </div>
             <p>Pemrograman prosedural, logika algoritma, input/output, dan tipe data dasar.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 70%;"></div>
+            <div class="skill-tags">
+              <span>Prosedural</span>
+              <span>Tipe Data & Array</span>
+              <span>Algoritma Dasar</span>
             </div>
           </div>
         </div>
@@ -451,8 +447,10 @@
               <span class="level-pill">Dasar</span>
             </div>
             <p>Struktur semantik web, elemen formulir, tabel, dan penyusunan halaman web portofolio.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 75%;"></div>
+            <div class="skill-tags">
+              <span>Struktur Semantik</span>
+              <span>Formulir & Tabel</span>
+              <span>GitHub Pages</span>
             </div>
           </div>
         </div>
@@ -468,8 +466,10 @@
               <span class="level-pill">Media Kreatif</span>
             </div>
             <p>Desain visual, poster kegiatan organisasi, konten sosial media, dan layout presentasi.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 85%;"></div>
+            <div class="skill-tags">
+              <span>Poster Acara</span>
+              <span>Konten Sosial Media</span>
+              <span>Desain Presentasi</span>
             </div>
           </div>
         </div>
@@ -485,8 +485,10 @@
               <span class="level-pill">Pengolahan Data</span>
             </div>
             <p>Tabel rekapitulasi data anggota, formula dasar, pengurutan, dan administrasi laporan.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 80%;"></div>
+            <div class="skill-tags">
+              <span>Rekapitulasi Anggota</span>
+              <span>Formula Dasar</span>
+              <span>Tabel Laporan</span>
             </div>
           </div>
         </div>
@@ -502,8 +504,10 @@
               <span class="level-pill">Dokumentasi</span>
             </div>
             <p>Penyusunan surat resmi organisasi, proposal kegiatan mingguan, dan laporan kegiatan.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 85%;"></div>
+            <div class="skill-tags">
+              <span>Surat Resmi</span>
+              <span>Proposal Acara</span>
+              <span>Laporan Pertanggungjawaban</span>
             </div>
           </div>
         </div>
@@ -519,8 +523,10 @@
               <span class="level-pill">IDE & Editor</span>
             </div>
             <p>Code editing, debugging program C & Python, manajemen file proyek & ekstensi modern.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 80%;"></div>
+            <div class="skill-tags">
+              <span>Code Editing</span>
+              <span>Debugging Program</span>
+              <span>Git & Terminal</span>
             </div>
           </div>
         </div>
@@ -536,8 +542,10 @@
               <span class="level-pill">Soft Skill</span>
             </div>
             <p>Penyampaian gagasan terstruktur, memimpin rapat mingguan, dan presentasi tim.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 90%;"></div>
+            <div class="skill-tags">
+              <span>Public Speaking</span>
+              <span>Rapat Mingguan</span>
+              <span>Kolaborasi Tim</span>
             </div>
           </div>
         </div>
@@ -553,8 +561,10 @@
               <span class="level-pill">Soft Skill</span>
             </div>
             <p>Cepat menyatu dengan lingkungan baru, sigap menghadapi dinamika tugas dan organisasi.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 92%;"></div>
+            <div class="skill-tags">
+              <span>Penyesuaian Tim</span>
+              <span>Dinamika Lapangan</span>
+              <span>Fleksibilitas</span>
             </div>
           </div>
         </div>
@@ -570,8 +580,10 @@
               <span class="level-pill">Soft Skill</span>
             </div>
             <p>Memiliki determinasi tinggi untuk mengeksplorasi ilmu baru di bidang IT dan pemrograman.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 95%;"></div>
+            <div class="skill-tags">
+              <span>Eksplorasi Mandiri</span>
+              <span>Teknologi Baru</span>
+              <span>Pengembangan Diri</span>
             </div>
           </div>
         </div>
@@ -588,8 +600,10 @@
               <span class="level-pill">Minat & Olahraga</span>
             </div>
             <p>Aktif dalam olahraga tim futsal dan mini soccer, mengasah ketahanan fisik, kepemimpinan lapangan, komunikasi cepat, dan kerja sama tim.</p>
-            <div class="skill-meter">
-              <div class="skill-meter-fill" style="width: 90%;"></div>
+            <div class="skill-tags">
+              <span>Kerja Sama Tim</span>
+              <span>Ketahanan Fisik</span>
+              <span>Sportivitas Lapangan</span>
             </div>
             <div style="margin-top: 0.75rem;">
               <a href="#documentation" style="font-size: 0.8rem; color: var(--secondary); display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; font-weight: 500;">

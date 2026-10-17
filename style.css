@@ -1,36 +1,36 @@
 /* ==========================================================
    PORTOFOLIO JOSE AMANDO TARIGAN
-   Tema: Celestial Moonlit & Glassmorphism Modern
-   Warna Utama: Midnight Deep Blue, Moonbeam Cyan & Teal Glow
+   Tema: Deep Ocean (Human-Crafted, Natural, Authentic & Modern)
+   Warna Utama: Marine Navy, Ocean Azure (#0ea5e9) & Seafoam Teal (#14b8a6)
    ========================================================== */
 
 :root {
-  --bg-deep: #060a17;
-  --bg-dark: #0a1124;
-  --bg-card: rgba(13, 22, 45, 0.75);
-  --bg-card-hover: rgba(20, 34, 68, 0.85);
-  --border-glass: rgba(114, 239, 221, 0.16);
-  --border-glass-hover: rgba(114, 239, 221, 0.45);
+  --bg-deep: #0a192f;
+  --bg-dark: #0d213d;
+  --bg-card: #112240;
+  --bg-card-hover: #162c52;
+  --border-glass: rgba(56, 189, 248, 0.14);
+  --border-glass-hover: rgba(56, 189, 248, 0.35);
   
-  --primary: #4cc9f0;
-  --primary-glow: rgba(76, 201, 240, 0.35);
-  --secondary: #72efdd;
-  --accent-blue: #4361ee;
-  --accent-purple: #7209b7;
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --secondary: #14b8a6;
+  --accent-blue: #0284c7;
+  --accent-teal: #2dd4bf;
 
   --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
 
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(76, 201, 240, 0.25);
-  --radius-lg: 20px;
-  --radius-md: 14px;
+  --shadow-card: 0 4px 18px -2px rgba(2, 6, 23, 0.5);
+  --shadow-glow: 0 8px 24px -2px rgba(2, 6, 23, 0.65);
+  --radius-lg: 16px;
+  --radius-md: 12px;
   --radius-sm: 8px;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition: all 0.25s ease;
 }
 
 /* Reset & Base */
@@ -48,6 +48,11 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--bg-deep);
+  background-image: 
+    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(14, 165, 233, 0.12), transparent 70%),
+    radial-gradient(circle at 100% 50%, rgba(20, 184, 166, 0.05), transparent 50%),
+    radial-gradient(circle at 0% 90%, rgba(14, 165, 233, 0.05), transparent 50%);
+  background-attachment: fixed;
   color: var(--text-main);
   line-height: 1.65;
   overflow-x: hidden;
@@ -55,16 +60,9 @@ body {
   min-height: 100vh;
 }
 
-/* Background Canvas Bintang */
+/* Background Canvas Bintang Dinonaktifkan untuk tampilan natural */
 #starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.8;
+  display: none !important;
 }
 
 /* Global Container */
@@ -98,12 +96,12 @@ p {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 10%, #72efdd 55%, #4cc9f0 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Button System */
+/* Button System - Human Designed */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -111,75 +109,76 @@ p {
   gap: 0.6rem;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.8rem 1.6rem;
-  border-radius: 9999px;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
   transition: var(--transition);
 }
 
 .btn-sm {
-  padding: 0.5rem 1.1rem;
+  padding: 0.45rem 1rem;
   font-size: 0.85rem;
+  border-radius: 6px;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #4361ee 0%, #4cc9f0 100%);
+  background: #0284c7;
   color: #ffffff;
-  box-shadow: 0 4px 20px rgba(67, 97, 238, 0.4);
+  border: 1px solid #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
 
 .btn-primary:hover {
+  background: #0369a1;
+  border-color: #0369a1;
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(76, 201, 240, 0.55);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.45);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: var(--secondary);
-  color: var(--secondary);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  color: #38bdf8;
   transform: translateY(-2px);
 }
 
 .btn-glass {
-  background: rgba(76, 201, 240, 0.1);
-  color: var(--secondary);
-  border-color: rgba(114, 239, 221, 0.25);
-  backdrop-filter: blur(8px);
+  background: rgba(14, 165, 233, 0.08);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .btn-glass:hover {
-  background: rgba(76, 201, 240, 0.2);
-  border-color: var(--secondary);
+  background: rgba(14, 165, 233, 0.16);
+  color: #ffffff;
+  border-color: var(--primary);
   transform: translateY(-2px);
 }
 
 .btn-wa {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: #10b981;
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+  border: 1px solid #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 .btn-wa:hover {
+  background: #059669;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
-  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 
-/* Glass Card */
+/* Clean Ocean Card (Subtle & Solid) */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
@@ -189,11 +188,12 @@ p {
 .glass-card:hover {
   border-color: var(--border-glass-hover);
   box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
 }
 
 /* Section Header */
 .section {
-  padding: 6rem 0;
+  padding: 5.5rem 0;
   position: relative;
   z-index: 1;
 }
