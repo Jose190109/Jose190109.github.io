@@ -20,7 +20,7 @@ Website portofolio pribadi modern berorientasi web & mobile responsive milik **J
    - **Profil Diri**: Ringkasan minat teknologi, software, hardware, programming, dan database.
    - **Pendidikan**: D3 Teknik Informatika Universitas Sumatera Utara (USU) & SMA S Katolik Budi Murni 2 Medan.
    - **Pengalaman Organisasi**: Jejak kepemimpinan di Immanuel GBKP KM.8 Medan (Ketua Pembinaan Remaja, Ketua Sektor Remaja, Sekretaris).
-   - **Keahlian (Hard & Soft Skills)**: Python, C, HTML, Microsoft Excel, Microsoft Word, Canva, VS Code, Code::Blocks, Komunikasi, Adaptasi, Semangat Belajar.
+   - **Keahlian (Hard & Soft Skills)**: Python, C, HTML, Microsoft Excel, Microsoft Word, Canva, VS Code, Code::Blocks, Komunikasi, Adaptasi, Semangat Belajar, Olahraga & Tim (Futsal / Mini Soccer).
    - **Bahasa**: Bahasa Indonesia (Fasih) & English (Pasif).
    - **Karya & Proyek Terkait**: Menampilkan eksplorasi pemrograman Python toko & string analyzer serta kreasi media.
 3. **Interaktivitas Lengkap**:
