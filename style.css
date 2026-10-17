@@ -1404,6 +1404,32 @@ p {
   z-index: 2;
 }
 
+.doc-thumbs-strip {
+  display: flex;
+  gap: 0.65rem;
+  padding: 0.85rem 1.6rem 0.2rem;
+  overflow-x: auto;
+}
+
+.doc-thumb {
+  width: 60px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.65;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.doc-thumb:hover, .doc-thumb.active {
+  opacity: 1;
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(114, 239, 221, 0.4);
+  transform: translateY(-2px);
+}
+
 .doc-info {
   padding: 1.6rem;
   display: flex;

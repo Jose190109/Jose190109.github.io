@@ -718,23 +718,23 @@
         <!-- Doc Card 1: Futsal & Mini Soccer -->
         <div class="doc-card glass-card">
           <div class="doc-media">
-            <img src="assets/images/futsal.jpg" alt="Dokumentasi Futsal & Mini Soccer" class="doc-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="doc-fallback futsal-fallback">
-              <div class="fallback-icon-wrap">
-                <i class="fa-solid fa-futbol"></i>
-              </div>
-              <h4>Dokumentasi Futsal / Mini Soccer</h4>
-              <p>Foto resolusi tinggi tersedia di Google Drive.</p>
-              <a href="https://drive.google.com/drive/folders/1-xSz8dFw1LThw6--jzJUXv6KpXojBfub" target="_blank" rel="noopener noreferrer" class="doc-fallback-btn">
-                <i class="fa-brands fa-google-drive"></i> Buka Foto di Drive
-              </a>
-            </div>
+            <img src="assets/images/futsal.jpg" id="docMainFutsalImg" alt="Dokumentasi Futsal & Mini Soccer" class="doc-img">
             <span class="doc-pill"><i class="fa-solid fa-futbol"></i> Olahraga & Hobi</span>
           </div>
+
+          <!-- Thumbnail Selector Strip Foto Futsal -->
+          <div class="doc-thumbs-strip">
+            <img src="assets/images/futsal.jpg" class="doc-thumb active" onclick="switchFutsalImage(this, 'assets/images/futsal.jpg')" alt="Foto Skuad Futsal 1" title="Klik untuk melihat foto 1">
+            <img src="assets/images/futsal-2.jpg" class="doc-thumb" onclick="switchFutsalImage(this, 'assets/images/futsal-2.jpg')" alt="Foto Pertandingan Futsal 2" title="Klik untuk melihat foto 2">
+            <img src="assets/images/futsal-3.jpg" class="doc-thumb" onclick="switchFutsalImage(this, 'assets/images/futsal-3.jpg')" alt="Foto Tim Futsal 3" title="Klik untuk melihat foto 3">
+            <img src="assets/images/futsal-4.jpg" class="doc-thumb" onclick="switchFutsalImage(this, 'assets/images/futsal-4.jpg')" alt="Foto Pertandingan Futsal 4" title="Klik untuk melihat foto 4">
+          </div>
+
           <div class="doc-info">
             <div class="doc-meta">
               <span><i class="fa-regular fa-calendar"></i> Rutin & Turnamen</span>
               <span><i class="fa-solid fa-location-dot"></i> Medan</span>
+              <span><i class="fa-solid fa-images"></i> 4 Foto Siap Ditampilkan</span>
             </div>
             <h3 class="doc-title">Bermain Futsal & Mini Soccer</h3>
             <p class="doc-desc">
@@ -747,8 +747,8 @@
               <span>#Sportivitas</span>
             </div>
             <div class="doc-footer">
-              <a href="https://drive.google.com/drive/folders/1-xSz8dFw1LThw6--jzJUXv6KpXojBfub" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
-                <i class="fa-brands fa-google-drive"></i> Lihat Album Foto
+              <a href="https://drive.google.com/drive/folders/1-xSz8dFw1LThw6--jzJUXv6KpXojBfub?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+                <i class="fa-brands fa-google-drive"></i> Buka Album Lengkap di Drive
               </a>
             </div>
           </div>

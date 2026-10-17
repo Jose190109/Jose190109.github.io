@@ -452,3 +452,26 @@ function initScrollTop() {
   });
 }
 
+/* ==========================================================
+   8. DOKUMENTASI GALLERY INTERACTION
+   ========================================================== */
+function switchFutsalImage(thumbElement, imageSrc) {
+  const mainImg = document.getElementById('docMainFutsalImg');
+  if (!mainImg) return;
+
+  // Efek transisi halus
+  mainImg.style.opacity = '0.3';
+  setTimeout(() => {
+    mainImg.src = imageSrc;
+    mainImg.style.opacity = '1';
+  }, 150);
+
+  // Perbarui status aktif thumbnail
+  const thumbs = document.querySelectorAll('.doc-thumb');
+  thumbs.forEach(t => t.classList.remove('active'));
+  if (thumbElement) {
+    thumbElement.classList.add('active');
+  }
+}
+
+
